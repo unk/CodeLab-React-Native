@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import CocktailList from "./CocktailList";
 import CocktailDetail from "./CocktailDetail";
@@ -14,7 +14,7 @@ const Navigator = createStackNavigator( {
 	Detail: {
 		screen: CocktailDetail,
 		navigationOptions: {
-			title: '상세'
+			title: '상세',
 		}
 	},
 } );

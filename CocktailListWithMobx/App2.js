@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, Picker, StyleSheet, Text, View } from 'react-native';
 import _ from 'underscore';
+import { observable } from "mobx";
+import { observer } from "mobx-react";
 
 const data = [
 	{
@@ -21,33 +23,30 @@ const data = [
 		description: '럼 + 라임 + 애플민트 + 설탕',
 		image: 'https://www.teisseire.com/media/1747/mojitopng.png',
 	},
-	{
-		key: 'BlackRussian',
-		label: '블랙러시안',
-		description: '보드카 + 깔루아',
-		image: 'https://t1.daumcdn.net/cfile/tistory/240E223C524A6EBA17',
-	},
 ];
 
-export default class App extends React.Component {
-	state = {
-		value: 'GinTonic',
-	};
+@observer class App extends React.Component {
+	@observable value = 'GinTonic';
+	@observable count = 0;
+
+	componentDidMount() {
+		setInterval(() => this.value++, 1000);
+	}
 
 	render() {
-		const item = _.find( data, element => element.key === this.state.value );
+		const item = _.find( data, element => element.key === this.value );
 		return (
 			<View style={styles.container}>
+				<Text>{ this.count }초 지났습니다.</Text>
 				<View style={{ flex: .3 }}>
 					<Picker
 						style={{ width: 300, height: 40 }}
-						selectedValue={this.state.value}
-						onValueChange={value => this.setState( { value } )}
+						selectedValue={this.value}
+						onValueChange={value => this.value = value}
 					>
 						<Picker.Item label="진토닉" value="GinTonic"/>
 						<Picker.Item label="AMF" value="AMF"/>
 						<Picker.Item label="모히토" value="Mojito"/>
-						<Picker.Item label="블랙러시안" value="BlackRussian"/>
 					</Picker>
 				</View>
 				<View style={{ flex: .7 }}>
@@ -78,3 +77,20 @@ const styles = StyleSheet.create( {
 		justifyContent: 'center',
 	},
 } );
+
+export default App;
+
+@observer class Comp1 extends React.Component {
+	@observable key = 'value';
+}
+@observer class Comp2 extends React.Component {
+	@observable key = 'value';
+}
+@observer class Container extends React.Component {
+	render() {
+		return <View>
+			<Comp1/>
+			<Comp2/>
+		</View>
+	}
+}
