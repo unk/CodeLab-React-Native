@@ -9,6 +9,7 @@ export default class MyButton extends React.Component {
 		},
 		text: {
 			textAlign: 'center',
+			fontSize: 24,
 			color: '#ffffff',
 		}
 	} );
@@ -17,10 +18,14 @@ export default class MyButton extends React.Component {
 			this.props.onPress();
 	};
 	render() {
+		let label = this.props.label;
+		if( this.props.label === undefined ) {
+			label = '{default label}';
+		}
 		return (
 			<View style={this.style.button} borderRadius={8}>
 				<TouchableOpacity onPress={this.onPress}>
-					<Text style={this.style.text}>{this.props.label}</Text>
+					<Text style={this.style.text}>{label}</Text>
 				</TouchableOpacity>
 			</View>
 		);

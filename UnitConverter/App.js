@@ -35,6 +35,7 @@ export default class App extends React.Component {
 					<Text>{this.state.type}</Text>
 				</View>
 				<Text>
+					{/* 0 inch -> 0 cm */}
 					{`${this.state.value} ${this.originUnit()} -> ${this.calc()} ${this.targetUnit()}`}
 				</Text>
 			</View>
