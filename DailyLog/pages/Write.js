@@ -19,7 +19,7 @@ class Data {
 		const data = {
 			key: uuid(),
 			userId: store.authInfo.user.uid,
-			timestamp: moment().format( 'x' ),
+			timestamp: moment().format( 'x' ), // unix timestamp (ms)
 			title: this.data.title,
 			content: this.data.content,
 		};

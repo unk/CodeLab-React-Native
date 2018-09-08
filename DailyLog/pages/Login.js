@@ -15,7 +15,8 @@ class Data {
 	data = new Data();
 
 	login = () => {
-		firebase.auth().signInAndRetrieveDataWithEmailAndPassword( this.data.email, this.data.password )
+		firebase.auth()
+			.signInAndRetrieveDataWithEmailAndPassword( this.data.email, this.data.password )
 			.then( info => {
 				store.authInfo = info;
 				this.props.navigation.navigate( 'List' );
@@ -28,7 +29,8 @@ class Data {
 	};
 
 	signUp = () => {
-		firebase.auth().createUserAndRetrieveDataWithEmailAndPassword( this.data.email, this.data.password )
+		firebase.auth()
+			.createUserAndRetrieveDataWithEmailAndPassword( this.data.email, this.data.password )
 			.then( info => {
 				store.authInfo = info;
 				this.props.navigation.navigate( 'List' );
