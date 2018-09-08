@@ -1,0 +1,31 @@
+{
+  "name": "DailyLog",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "jest": "^23.5.0",
+    "jest-react-native": "^18.0.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "dependencies": {
+    "mobx": "4",
+    "mobx-react": "^5.2.6",
+    "moment": "^2.22.2",
+    "react": "16.3.1",
+    "react-native": "~0.55.2",
+    "react-native-firebase": "^4.3.8",
+    "react-navigation": "^2.13.0",
+    "underscore": "^1.9.1",
+    "uuid": "^3.3.2"
+  }
+}

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config=":react-native-firebase"><source path="/Users/unk/codelab/DailyLog/node_modules/react-native-firebase/android/build/intermediates/packagedAssets/debug"/></dataSet><dataSet config="main"><source path="/Users/unk/codelab/DailyLog/android/app/src/main/assets"/><source path="/Users/unk/codelab/DailyLog/android/app/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/unk/codelab/DailyLog/android/app/src/debug/assets"/></dataSet></merger>
