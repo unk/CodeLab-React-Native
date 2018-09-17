@@ -1,5 +1,14 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "sdkVersion": "27.0.0",
+    "name": "Thanos Roulette",
+    "version": "1.0.1",
+    "slug": "thanos-roulette",
+    "ios": {
+      "bundleIdentifier": "com.grotesq.thanos.roulette"
+    },
+    "android": {
+      "package": "com.grotesq.thanos.roulette"
+    }
   }
 }

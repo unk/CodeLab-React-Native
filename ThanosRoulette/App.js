@@ -9,7 +9,7 @@ const styles = StyleSheet.create( {
 		justifyContent: 'center',
 	},
 	text: {
-		color: '#000',
+		color: '#333',
 		fontSize: 24,
 	}
 } );
